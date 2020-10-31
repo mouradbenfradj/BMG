@@ -6,6 +6,15 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
     Encore.configureRuntimeEnvironment(process.env.NODE_ENV || 'dev');
 }
 
+if (Encore.isProduction()) {
+    Encore.setPublicPath('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i');
+
+    // guarantee that the keys in manifest.json are *still*
+    // prefixed with build/
+    // (e.g. "build/dashboard.js": "https://my-cool-app.com.global.prod.fastly.net/dashboard.js")
+    Encore.setManifestKeyPrefix('build/');
+}
+
 Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
@@ -20,6 +29,10 @@ Encore
 
         // only copy files matching this pattern
         //pattern: /\.(png|jpg|jpeg)$/
+    })
+    .configureUrlLoader({
+        fonts: { limit: 4096 },
+        images: { limit: 4096 }
     })
     // public path used by the web server to access the output path
     .setPublicPath('/build')
