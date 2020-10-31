@@ -14,30 +14,14 @@
     <link href="{{ asset('build/images/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-
     {% endblock %}
 </head>
-
-
 <body>
 {% block body %}{% endblock %}
 {% block javascripts %}
-
-    <!-- Vendor JS Files -->
-{#
-    <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
-#}
-{#
-    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-#}
-
-    {#<!-- Template Main JS File -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    #}{{ encore_entry_script_tags('app') }}
-
+{{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>
