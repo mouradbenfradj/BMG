@@ -13,8 +13,8 @@ import $ from 'jquery';
 
 import "jquery.easing";
 import "./vendor/php-email-form/validate.js";
-import "jquery-waypoints";
-import "counterup";
+import "./vendor/waypoints/jquery.waypoints.min";
+import "./vendor/counterup/counterup.min";
 
 import jQueryBridget from 'jquery-bridget';
 import Isotope from 'isotope-layout';

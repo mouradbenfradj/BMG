@@ -1,6 +1,6 @@
 @import "~bootstrap";
 
 @import "~boxicons";
-@import "../css/style.css";
-@import "../vendor/icofont/icofont.min.css";
+@import "./css/style.css";
+@import "./icofont/icofont.min.css";
 
